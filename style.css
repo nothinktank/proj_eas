@@ -6,6 +6,12 @@ body {
   background-color: white;
 }
 
+#container{
+  display: flex;
+  background-color: green;
+  
+}
+
 #row {
   display: flex;
   background-color: aliceblue;
@@ -15,8 +21,7 @@ body {
   height: 50px;
 }
 
-#container{
+#column {
   display: flex;
-  background-color: green;
-  
+  flex-direction: column;
 }
