@@ -9,7 +9,7 @@ containerDiv.appendChild(testDiv);
 //create a button that prompt the user to enter a number for the size of the grid
 let button = document.querySelector(`button`);
 
-let gridSize = 16; //16 x 16 grid
+let gridSize = 20; //16 x 16 grid
 
 button.addEventListener(`click`, () => {
   gridSize = prompt(`Please enter a grid size`, `16`) ;
@@ -22,16 +22,16 @@ button.addEventListener(`click`, () => {
 
 //create a div to include the entire row of 16 horizontal divs
 //append them vertically through CSS stylesheet
-
-for (i = 0; i < gridSize; i++){
+function createGrid(a){
+  for (i = 0; i < a; i++){
   let columnDiv = document.createElement(`div`);
   columnDiv.id = `column`;
 
-  for (n = 0; n < gridSize ; n++){
+  for (n = 0; n < a ; n++){
     let rowDiv = document.createElement(`div`);
     rowDiv.id = `row`;
-    const w = 100/(gridSize + 2);
-    const h = 100/(gridSize + 2);
+    const w = 100/(a + 2);
+    const h = 100/(a + 2);
     rowDiv.style.width = `${w}vw`;
     rowDiv.style.height =  `${h}vh`
     columnDiv.appendChild(rowDiv);
@@ -51,6 +51,8 @@ for (i = 0; i < gridSize; i++){
   containerDiv.appendChild(columnDiv);
   
 }
+}
+createGrid(gridSize);
 
 const gridBoxes = document.querySelectorAll(`row`);
 
