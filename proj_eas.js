@@ -6,31 +6,36 @@ let testDiv = document.createElement("div");
 testDiv.id = "row";
 containerDiv.appendChild(testDiv);
 */
+//create a button that prompt the user to enter a number for the size of the grid
+let button = document.querySelector(`button`);
 
 let gridSize = 16; //16 x 16 grid
+
+button.addEventListener(`click`, () => {
+  gridSize = prompt(`Please enter a grid size`, `16`) ;
+  console.log(`gridsize entered`);
+});
+
+
 
 //create 16 divs and append them horizontally 
 
 //create a div to include the entire row of 16 horizontal divs
 //append them vertically through CSS stylesheet
 
-for (i = 0; i < 16; i++){
+for (i = 0; i < gridSize; i++){
   let columnDiv = document.createElement(`div`);
   columnDiv.id = `column`;
 
-  for (n = 0; n < 16 ; n++){
+  for (n = 0; n < gridSize ; n++){
     let rowDiv = document.createElement(`div`);
     rowDiv.id = `row`;
-    const w = 100/18;
-    const h = 100/18;
+    const w = 100/(gridSize + 2);
+    const h = 100/(gridSize + 2);
     rowDiv.style.width = `${w}vw`;
     rowDiv.style.height =  `${h}vh`
     columnDiv.appendChild(rowDiv);
-/*
-    rowDiv.addEventListener("hover", () => {
-      rowDiv.style.backgroundColor = `red`;
-    })
-    */
+
     rowDiv.addEventListener("mouseenter", () => {
       rowDiv.style.backgroundColor = `red`;
       rowDiv.style.transition = `background-color 0.1s ease`;
@@ -56,7 +61,7 @@ containerDiv.addEventListener(`mouseenter`, () => {
 gridBoxes.forEach((gridBox) => {
   gridBox.addEventListener(`mouseenter`, () => {
   gridBox.style.backgroundColor = "red";
-  console.log("mouse has entered");
+  //console.log("mouse has entered");
   });
 }); 
 
@@ -71,8 +76,3 @@ btns.forEach((btn) => {
 
 */
 
-
-
-for (n = 1; n < 16 ; n++){
-
-}
