@@ -14,6 +14,7 @@ let gridSize = 20; //16 x 16 grid
 button.addEventListener(`click`, () => {
   gridSize = prompt(`Please enter a grid size`, `16`) ;
   console.log(`gridsize entered`);
+
 });
 
 
@@ -25,13 +26,15 @@ button.addEventListener(`click`, () => {
 function createGrid(a){
   for (i = 0; i < a; i++){
   let columnDiv = document.createElement(`div`);
-  columnDiv.id = `column`;
+  columnDiv.class = `column`;
 
   for (n = 0; n < a ; n++){
     let rowDiv = document.createElement(`div`);
-    rowDiv.id = `row`;
+    rowDiv.class = `row`;
     const w = 100/(a + 2);
     const h = 100/(a + 2);
+    rowDiv.style.border = `solid 1px darkgoldenrod`;
+    rowDiv.style.backgroundColor = `aliceblue`;
     rowDiv.style.width = `${w}vw`;
     rowDiv.style.height =  `${h}vh`
     columnDiv.appendChild(rowDiv);
@@ -44,7 +47,7 @@ function createGrid(a){
 
     rowDiv.addEventListener("mouseleave", () => {
       rowDiv.style.transition =  `background-color 1s ease`;
-      rowDiv.style.backgroundColor = ``;
+      rowDiv.style.backgroundColor = `aliceblue`;
       //console.log("mouse has left");
     });
   }

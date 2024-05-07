@@ -18,14 +18,14 @@ body {
   
 }
 
-#row {
+.row {
   display: flex;
   background-color: aliceblue;
   border: solid 1px darkgoldenrod;
   justify-content: center;
 }
   
-#column {
+.column {
   display: flex;
   flex-direction: column;
   align-items: stretch;
