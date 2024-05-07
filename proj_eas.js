@@ -33,12 +33,14 @@ for (i = 0; i < 16; i++){
     */
     rowDiv.addEventListener("mouseenter", () => {
       rowDiv.style.backgroundColor = `red`;
-      console.log("mouse has entered");
+      //rowDiv.style.transition = `background-color 0.1s ease`;
+      //console.log("mouse has entered");
     });
 
     rowDiv.addEventListener("mouseleave", () => {
+      rowDiv.style.transition =  `background-color 1s ease`;
       rowDiv.style.backgroundColor = ``;
-      console.log("mouse has left");
+      //console.log("mouse has left");
     });
   }
   containerDiv.appendChild(columnDiv);
@@ -48,7 +50,7 @@ for (i = 0; i < 16; i++){
 const gridBoxes = document.querySelectorAll(`row`);
 
 containerDiv.addEventListener(`mouseenter`, () => {
-  console.log("entrance recorded");
+  //console.log("entrance recorded");
 });
 
 gridBoxes.forEach((gridBox) => {
