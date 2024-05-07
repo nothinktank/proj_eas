@@ -33,7 +33,7 @@ for (i = 0; i < 16; i++){
     */
     rowDiv.addEventListener("mouseenter", () => {
       rowDiv.style.backgroundColor = `red`;
-      //rowDiv.style.transition = `background-color 0.1s ease`;
+      rowDiv.style.transition = `background-color 0.1s ease`;
       //console.log("mouse has entered");
     });
 
