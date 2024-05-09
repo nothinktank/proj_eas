@@ -7,15 +7,26 @@ testDiv.id = "row";
 containerDiv.appendChild(testDiv);
 */
 //create a button that prompt the user to enter a number for the size of the grid
-let button = document.querySelector(`button`);
+let button = document.querySelector(`.button`);
+
+let aboveContainerDiv = document.querySelector(`#aboveContainer`)
 
 let gridSize = 20; //16 x 16 grid
 
-button.addEventListener(`click`, () => {
+document.addEventListener("DOMContentLoaded",() => {
+  button.addEventListener(`click`, () => {
   gridSize = prompt(`Please enter a grid size`, `16`) ;
   console.log(`gridsize entered`);
+  removeGrid();
 
+
+  /*
+  let createNewContainer = document.createElement(`div`);
+  aboveContainerDiv.appendChild(createNewContainer);
+  */
 });
+});
+
 
 
 
@@ -26,11 +37,11 @@ button.addEventListener(`click`, () => {
 function createGrid(a){
   for (i = 0; i < a; i++){
   let columnDiv = document.createElement(`div`);
-  columnDiv.class = `column`;
+  columnDiv.className = `column`;
 
   for (n = 0; n < a ; n++){
     let rowDiv = document.createElement(`div`);
-    rowDiv.class = `row`;
+    rowDiv.className = `row`;
     const w = 100/(a + 2);
     const h = 100/(a + 2);
     rowDiv.style.border = `solid 1px darkgoldenrod`;
@@ -56,20 +67,39 @@ function createGrid(a){
 }
 }
 createGrid(gridSize);
+//let oldGrid = document.getElementsByClassName(`column`);
+function removeGrid(){
+  
+  console.log(gridBoxes.length);
+  //gridBoxes.remove();
+  /*
+  try {
+    while(gridBoxes[0] != null){
+    gridBoxes[0].remove();
+  };
+  } catch (error) {
+    console.error(e);
+  }
+  */
+  
+ /*
+  for (let n = gridBoxes.length; n >= 0 ; n--){
+    gridBoxes[n].remove();
+  }
+*/
+}
 
-const gridBoxes = document.querySelectorAll(`row`);
 
-containerDiv.addEventListener(`mouseenter`, () => {
-  //console.log("entrance recorded");
-});
+let gridBoxes = document.querySelectorAll(`.column`);
 
+/*
 gridBoxes.forEach((gridBox) => {
   gridBox.addEventListener(`mouseenter`, () => {
   gridBox.style.backgroundColor = "red";
   //console.log("mouse has entered");
   });
 }); 
-
+*/
 /*
 btns.forEach((btn) => {
   btn.textContent = `this is button ${btn.id}`;
