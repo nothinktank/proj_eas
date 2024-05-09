@@ -9,7 +9,6 @@ containerDiv.appendChild(testDiv);
 //create a button that prompt the user to enter a number for the size of the grid
 let button = document.querySelector(`.button`);
 
-let aboveContainerDiv = document.querySelector(`#aboveContainer`)
 
 let gridSize = 20; //16 x 16 grid
 
@@ -18,12 +17,8 @@ document.addEventListener("DOMContentLoaded",() => {
   gridSize = prompt(`Please enter a grid size`, `16`) ;
   console.log(`gridsize entered`);
   removeGrid();
+  createGrid(gridSize);
 
-
-  /*
-  let createNewContainer = document.createElement(`div`);
-  aboveContainerDiv.appendChild(createNewContainer);
-  */
 });
 });
 
@@ -70,7 +65,8 @@ createGrid(gridSize);
 //let oldGrid = document.getElementsByClassName(`column`);
 function removeGrid(){
   
-  console.log(gridBoxes.length);
+  console.log(gridBoxes);
+  containerDiv.innerHTML = ``;
   //gridBoxes.remove();
   /*
   try {
