@@ -49,7 +49,7 @@ function createGrid(a){
 
 
     rowDiv.addEventListener("mouseenter", () => {
-      rowDiv.style.backgroundColor = `red`;
+      rowDiv.style.backgroundColor = rgbRandomizer();
       rowDiv.style.transition = `background-color 0.1s ease`;
       //console.log("mouse has entered");
     });
@@ -76,8 +76,14 @@ function removeGrid(){
 
 }
 
-
-
+function rgbRandomizer() {
+  let firstNumber = Math.floor(Math.random() * 255);
+  let secondNumber = Math.floor(Math.random() * 255);
+  let thirdNumber = Math.floor(Math.random() * 255);
+  return `rgb(${firstNumber}, ${secondNumber}, ${thirdNumber})`
+  
+}
+console.log(rgbRandomizer());
 
 /*
 gridBoxes.forEach((gridBox) => {
