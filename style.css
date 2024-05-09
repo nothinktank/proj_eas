@@ -13,9 +13,11 @@ body {
   align-items: center;
   justify-content: center;
   background-color: green;
-  /*width: 100vw;
-  height: 100vh;*/
   
+  /*
+  width: 960px;
+  height: 960px;
+  */
 }
 
 .row {
@@ -23,6 +25,7 @@ body {
   background-color: aliceblue;
   border: solid 1px darkgoldenrod;
   justify-content: center;
+  align-items: stretch;
 }
   
 .column {

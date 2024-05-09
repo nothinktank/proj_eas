@@ -10,19 +10,18 @@ containerDiv.appendChild(testDiv);
 let button = document.querySelector(`.button`);
 
 
-let gridSize = 20; //16 x 16 grid
 
 document.addEventListener("DOMContentLoaded",() => {
   button.addEventListener(`click`, () => {
-  gridSize = prompt(`Please enter a grid size`, `16`) ;
+  gridSize = prompt(`Please enter a grid size`, 16) ;
   console.log(`gridsize entered`);
   removeGrid();
-  createGrid(gridSize);
+  createGrid(Number(gridSize));
 
 });
 });
 
-
+let gridSize = 18; //16 x 16 grid
 
 
 //create 16 divs and append them horizontally 
@@ -33,6 +32,7 @@ function createGrid(a){
   for (i = 0; i < a; i++){
   let columnDiv = document.createElement(`div`);
   columnDiv.className = `column`;
+  
 
   for (n = 0; n < a ; n++){
     let rowDiv = document.createElement(`div`);
@@ -41,9 +41,12 @@ function createGrid(a){
     const h = 100/(a + 2);
     rowDiv.style.border = `solid 1px darkgoldenrod`;
     rowDiv.style.backgroundColor = `aliceblue`;
+    //rowDiv.style.width = `10px`;
+    //rowDiv.style.height =  `10px`;
     rowDiv.style.width = `${w}vw`;
-    rowDiv.style.height =  `${h}vh`
+    rowDiv.style.height =  `${h}vh`;
     columnDiv.appendChild(rowDiv);
+
 
     rowDiv.addEventListener("mouseenter", () => {
       rowDiv.style.backgroundColor = `red`;
@@ -63,30 +66,18 @@ function createGrid(a){
 }
 createGrid(gridSize);
 //let oldGrid = document.getElementsByClassName(`column`);
+
+
 function removeGrid(){
-  
+  let gridBoxes = document.querySelectorAll(`.column`);
   console.log(gridBoxes);
+
   containerDiv.innerHTML = ``;
-  //gridBoxes.remove();
-  /*
-  try {
-    while(gridBoxes[0] != null){
-    gridBoxes[0].remove();
-  };
-  } catch (error) {
-    console.error(e);
-  }
-  */
-  
- /*
-  for (let n = gridBoxes.length; n >= 0 ; n--){
-    gridBoxes[n].remove();
-  }
-*/
+
 }
 
 
-let gridBoxes = document.querySelectorAll(`.column`);
+
 
 /*
 gridBoxes.forEach((gridBox) => {
