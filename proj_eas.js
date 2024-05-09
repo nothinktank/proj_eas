@@ -1,11 +1,7 @@
 //create reference to container div
 let containerDiv = document.querySelector("#container")
 
-/*
-let testDiv = document.createElement("div");
-testDiv.id = "row";
-containerDiv.appendChild(testDiv);
-*/
+
 //create a button that prompt the user to enter a number for the size of the grid
 let button = document.querySelector(`.button`);
 
@@ -41,8 +37,6 @@ function createGrid(a){
     const h = 100/(a + 2);
     rowDiv.style.border = `solid 1px darkgoldenrod`;
     rowDiv.style.backgroundColor = `aliceblue`;
-    //rowDiv.style.width = `10px`;
-    //rowDiv.style.height =  `10px`;
     rowDiv.style.width = `${w}vw`;
     rowDiv.style.height =  `${h}vh`;
     columnDiv.appendChild(rowDiv);
@@ -51,13 +45,13 @@ function createGrid(a){
     rowDiv.addEventListener("mouseenter", () => {
       rowDiv.style.backgroundColor = rgbRandomizer();
       rowDiv.style.transition = `background-color 0.1s ease`;
-      //console.log("mouse has entered");
+  
     });
 
     rowDiv.addEventListener("mouseleave", () => {
       rowDiv.style.transition =  `background-color 1s ease`;
       rowDiv.style.backgroundColor = `aliceblue`;
-      //console.log("mouse has left");
+
     });
   }
   containerDiv.appendChild(columnDiv);
@@ -65,7 +59,7 @@ function createGrid(a){
 }
 }
 createGrid(gridSize);
-//let oldGrid = document.getElementsByClassName(`column`);
+
 
 
 function removeGrid(){
@@ -83,24 +77,5 @@ function rgbRandomizer() {
   return `rgb(${firstNumber}, ${secondNumber}, ${thirdNumber})`
   
 }
-console.log(rgbRandomizer());
 
-/*
-gridBoxes.forEach((gridBox) => {
-  gridBox.addEventListener(`mouseenter`, () => {
-  gridBox.style.backgroundColor = "red";
-  //console.log("mouse has entered");
-  });
-}); 
-*/
-/*
-btns.forEach((btn) => {
-  btn.textContent = `this is button ${btn.id}`;
-  btn.addEventListener("click", () => {
-    alert(btn.id);
-  });
-
-});
-
-*/
 
