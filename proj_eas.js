@@ -37,7 +37,6 @@ function createGrid(a){
     const h = 100/(a + 2);
     rowDiv.style.border = `solid 1px darkgoldenrod`;
     rowDiv.style.backgroundColor = `aliceblue`;
-    
     rowDiv.style.width = `${w}vw`;
     rowDiv.style.height =  `${h}vh`;
     rowDiv.style.opacity = 1;
