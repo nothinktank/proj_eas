@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded",() => {
 });
 
 let gridSize = 18; //16 x 16 grid
-
+let counter = 0;
 
 //create 16 divs and append them horizontally 
 
@@ -37,30 +37,76 @@ function createGrid(a){
     const h = 100/(a + 2);
     rowDiv.style.border = `solid 1px darkgoldenrod`;
     rowDiv.style.backgroundColor = `aliceblue`;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> progressive_darkening_effect
     rowDiv.style.width = `${w}vw`;
     rowDiv.style.height =  `${h}vh`;
+    rowDiv.style.opacity = 1;
     columnDiv.appendChild(rowDiv);
 
 
     rowDiv.addEventListener("mouseenter", () => {
       rowDiv.style.backgroundColor = rgbRandomizer();
       rowDiv.style.transition = `background-color 0.1s ease`;
+<<<<<<< HEAD
   
+=======
+      //rowDiv.style.opacity += -0.1;
+      //counter += 1;
+      //console.log(counter);
+>>>>>>> progressive_darkening_effect
     });
 
     rowDiv.addEventListener("mouseleave", () => {
       rowDiv.style.transition =  `background-color 1s ease`;
       rowDiv.style.backgroundColor = `aliceblue`;
+<<<<<<< HEAD
 
+=======
+      if (rowDiv.style.opacity > 0) {
+        let opacity = parseFloat(rowDiv.style.opacity);
+        rowDiv.style.opacity = `${opacity - 0.1}`;
+      };
+      //rowDiv.style.opacity = 1 ;
+      
+>>>>>>> progressive_darkening_effect
     });
   }
   containerDiv.appendChild(columnDiv);
-  
-}
+  /*
+  switch (counter) {
+    case 1:
+      rowDiv.style.opacity = 0.9 ;
+    case 2:
+      rowDiv.style.opacity = 0.8 ;
+    case 3:
+      rowDiv.style.opacity = 0.7 ;
+    case 4:
+      rowDiv.style.opacity = 0.6 ;
+    case 5:
+      rowDiv.style.opacity = 0.5 ;
+    case 6:
+      rowDiv.style.opacity = 0.4 ;
+    case 7:
+      rowDiv.style.opacity = 0.3 ;
+    case 8:
+      rowDiv.style.opacity = 0.2 ;
+    case 9:
+      rowDiv.style.opacity = 0.1 ;
+      default:
+        rowDiv.style.opacity = 0 ;
+  }
+*/
+};
 }
 createGrid(gridSize);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> progressive_darkening_effect
 
 function removeGrid(){
   let gridBoxes = document.querySelectorAll(`.column`);
@@ -78,4 +124,11 @@ function rgbRandomizer() {
   
 }
 
+<<<<<<< HEAD
+=======
+//set a counter, as eventlistener for mouse leave is triggered, add 1 to the counter
+
+
+//add a switch to counter up to 10, change the opacity with each case
+>>>>>>> progressive_darkening_effect
 
